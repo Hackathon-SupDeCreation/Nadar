@@ -1,43 +1,61 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import AppHeader from './AppHeader.js'
-import PlayBtn from '../components/PlayBtn.js'
 
-const ChatBot = () =>
-  <View>
-    <Text>Chat boteezef</Text>
-  </View>
-
-class BotPart extends React.Component {
+class ChatbotPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  };
+  }
   render() {
+    
     return (
-      <View style={styles.container}>
-        <ChatBot />
-      </View>
+      <button type='submit'>Play</button>
     )
   }
 }
 
-class ChatbotPage extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <AppHeader />
-        <BotPart />
-        <PlayBtn style={styles.playButton} text='Jouer' />
-      </View>
-    )
-  }
-}
+export default ChatbotPage;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  playButton: {
+
+// import React from 'react'
+// import { StyleSheet, Text, View } from 'react-native'
+// import AppHeader from './AppHeader.js'
+// import PlayBtn from '../components/PlayBtn.js'
+
+// const ChatBot = () =>
+//   <View>
+//     <Text>Chat boteezef</Text>
+//   </View>
+
+// class BotPart extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <ChatBot />
+//       </View>
+//     )
+//   }
+// }
+
+// class ChatbotPage extends React.Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <AppHeader />
+//         <BotPart />
+//         <PlayBtn style={styles.playButton} text='Jouer' />
+//       </View>
+//     )
+//   }
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//   },
+//   playButton: {
    
-  }
-})
+//   }
+// })
 
-export default ChatbotPage
+// export default ChatbotPage
