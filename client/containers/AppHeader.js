@@ -6,8 +6,8 @@ class AppHeader extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <BlocNav style={styles.blocNav1} text='Dialogue avec Nadar'/>
-        <BlocNav style={styles.blocNav2} text='Infos points'/>
+        <BlocNav imgUrl={require('../img/nav1.png')} text='Dialogue avec Nadar'/>
+        <BlocNav imgUrl={require('../img/nav2.png')} text='Infos points'/>
       </View>
     )
   }
@@ -16,14 +16,7 @@ class AppHeader extends Component {
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: '#333',
-    justifyContent: 'center',
-  },
-  blocNav1: {
-    width: '50%',
-    height: '30%',
-    backgroundColor: '#333',
-    justifyContent: 'center',
+    flexDirection: 'row',
   },
 })
 
