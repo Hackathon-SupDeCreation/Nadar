@@ -6,9 +6,15 @@ import Chat from './containers/Chat.js'
 export default class App extends React.Component {
     render() {
         return (
-            <View>
+            <View style ={styles.MainContainer}>
                 <Chat/>
             </View>
-        );
+        )
     }
 }
+
+const styles = StyleSheet.create({
+  MainContainer: {flex:1,
+    }
+
+})

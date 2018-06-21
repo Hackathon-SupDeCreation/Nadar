@@ -67,7 +67,8 @@ class ChatBot extends Component {
                 disabled={this.state.ButtonStateHolder2}
                     onPress={onPress2}
                     title={GameOfChoices[this.state.dialogueStatus + 'b']}
-                    color="#841584"/>
+                    color="#841584"
+      />
 
                 <Button
                 disabled={this.state.ButtonStateHolder3}

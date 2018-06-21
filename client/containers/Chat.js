@@ -1,27 +1,17 @@
-import React, {Component} from 'react';
-import {
-    View,
-    Text,
-    Platform,
-    StyleSheet,
-    TouchableOpacity,
-    Animated,
-    ScrollView,
-    Image,
-    Button
-} from 'react-native';
+import React, {Component} from 'react'
+import {View, Text, StyleSheet, ScrollView, Button} from 'react-native'
 
 class Chat extends Component {
     constructor()
     {
-        super();
+        super()
 
         this.state = {
             valueArray: [],
-            disabled: false
+            Right: false
         }
 
-        this.index = 0;
+        this.index = 0
     }
     state = {}
 
@@ -37,9 +27,8 @@ class Chat extends Component {
                 newlyAddedValue
             ]
         }, () => {
-            this.index = this.index + 1;
-            this.setState({disabled: false});
-        });;
+            this.index = this.index++
+        })
     }
 
     render() {
@@ -49,41 +38,59 @@ class Chat extends Component {
                 .state
                 .valueArray
                 .map((item, key) => {
-                    if ((key) == this.index) {
+                    if ((key % 2) == 3 % 1) {
                         return (
-                            <View>
-                                <Text>Row {item.index}</Text>
+                            <View key={key} style ={styles.container}>
+                                <Text style ={styles.text}>Row {item.index}</Text>
                             </View>
-                        );
+                        )
                     } else {
                         return (
-                            <View>
+                            <View key={key} style ={styles.container}>
                                 <Text>Row {item.index}</Text>
                             </View>
-                        );
+                        )
                     }
-                });
+                })
+                return (
 
-            return (
-
-                <View >
-                    <ScrollView>
-                        <View>
-                            {newArray
+                    <View style={{
+                        flex: 1
+                    }}>
+                        <ScrollView
+                            style={{
+                            backgroundColor: 'yellow'
+                        }}>
+                            <View>
+                                {newArray
 }
+                            </View>
+                        </ScrollView>
+                        <View>
+                            <Button
+                                style
+                                ={styles.container}
+                                onPress={this.addMore}
+                                title='Blop'
+                                color="#841584"
+                                bottom="0"
+                                flex="1"/>
                         </View>
-                    </ScrollView>
-
-                    <Button
-                        disabled={this.state.ButtonStateHolder2}
-                        onPress={this.addMore}
-                        title='Blop'
-                        color="#841584"/>
-                </View>
-
-            )
+                    </View>
+                )
         }
     }
 }
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 19,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        flex: 1
+    },
+    container: {
+        flex: 1
+    }
+})
 
-export default Chat;
+export default Chat
